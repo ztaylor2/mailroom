@@ -1,0 +1,12 @@
+actionid: py27
+msg: installpkg
+cmdargs: ['/Users/zt/programming/codefellows/401/assignments/mailroom/.tox/py27/bin/pip', 'install', '/Users/zt/programming/codefellows/401/assignments/mailroom/.tox/dist/trigram-0.1.zip']
+
+Processing ./.tox/dist/trigram-0.1.zip
+Building wheels for collected packages: trigram
+  Running setup.py bdist_wheel for trigram: started
+  Running setup.py bdist_wheel for trigram: finished with status 'done'
+  Stored in directory: /Users/zt/Library/Caches/pip/wheels/38/cd/c1/31294e98189b45c89a223e7a114a4ca5e16ca91712546fc80e
+Successfully built trigram
+Installing collected packages: trigram
+Successfully installed trigram-0.1

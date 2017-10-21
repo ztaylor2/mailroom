@@ -1,5 +1,10 @@
 """."""
 
+import sys
+
+
+USER_DONATION_HISTORY = {}
+
 
 def get_user_input(prompt, validator=None):
     """."""
@@ -29,10 +34,12 @@ def send_a_thank_you():
 def create_a_report():
     """."""
     print('report was put in')
+    main()
 
 
 def main():
     """."""
+    print('ctrl + c to quit')
     initial_user_input = get_user_input('input: \'thank you\' or \'report\'',
                                         validate_user_input_thank_report)
     if initial_user_input.lower() == 'thank you':
@@ -42,4 +49,8 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except KeyboardInterrupt:
+        print("\nGoodbye")
+        sys.exit()

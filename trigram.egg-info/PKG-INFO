@@ -1,0 +1,10 @@
+Metadata-Version: 1.0
+Name: trigram
+Version: 0.1
+Summary: A Python implementation of a trigram parser.
+Home-page: UNKNOWN
+Author: Zach Taylor & Michael Shinners
+Author-email: zacharymtaylor3@gmail.com & michaelshinners@gmail.com
+License: MIT
+Description: UNKNOWN
+Platform: UNKNOWN
