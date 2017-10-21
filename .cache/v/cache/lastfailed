@@ -1,0 +1,6 @@
+{
+  "test_mailroom.py::test_thankyou_or_report_validation[another random string-None]": true,
+  "test_mailroom.py::test_thankyou_or_report_validation[anything-None]": true,
+  "test_mailroom.py::test_thankyou_or_report_validation[report-report]": true,
+  "test_mailroom.py::test_thankyou_or_report_validation[thank you-thank you]": true
+}
