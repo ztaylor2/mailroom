@@ -3,7 +3,7 @@
 import sys
 
 
-USER_DONATION_HISTORY = {}
+USER_DONATION_HISTORY = {"zach": [1, 2, 3], "mike": [5000, 1, 3], "someone": [5, 2, 3]}
 
 
 def get_user_input(prompt, validator=None):
@@ -33,7 +33,13 @@ def send_a_thank_you():
 
 def create_a_report():
     """."""
-    print('report was put in')
+    donors_donation_list = []
+    for key in USER_DONATION_HISTORY:
+        new_donor = []
+        new_donor.append(sum(USER_DONATION_HISTORY[key]))
+        new_donor.append(key)
+        donors_donation_list.append(new_donor)
+    print(sorted(donors_donation_list, reverse=True))
     main()
 
 
