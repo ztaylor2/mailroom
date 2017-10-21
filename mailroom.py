@@ -29,7 +29,9 @@ def validate_user_input_thank_report(reply):
 
 def send_a_thank_you():
     """."""
-
+    # if reply == 'list':
+    #     create_a_report()
+    # else reply ==
     print('thank you was put in')
 
 
@@ -42,7 +44,7 @@ def create_a_report():
         new_donor.append(key)
         donors_donation_list.append(new_donor)
     print(sorted(donors_donation_list, reverse=True))
-    print(create_donor_table(USER_DONATION_HISTORY, colList=None))
+    # print(create_donor_table(USER_DONATION_HISTORY, colList=None))  #this line needs to go elsewhere.
     main()
 
 
