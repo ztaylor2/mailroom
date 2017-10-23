@@ -8,7 +8,7 @@ USER_DONATION_HISTORY = {"zach": [1, 2, 3],
                          "mike": [5000, 1, 3], "someone": [5, 2, 3]}
 
 
-def get_user_input(prompt, validator=None):
+def get_user_input(prompt, validator=None):  # pragma: no cover
     """."""
     reply = None
     while reply is None:
@@ -36,8 +36,8 @@ def validate_donation(reply):
         return None
 
 
-def send_a_thank_you():
-    """."""
+def send_a_thank_you():  # pragma: no cover
+    """Gather our user input hence the pragma: no cover."""
     global USER_DONATION_HISTORY
     full_name_input = get_user_input('input full name:')
     if full_name_input == 'list':
@@ -45,29 +45,29 @@ def send_a_thank_you():
         send_a_thank_you()
     elif full_name_input not in USER_DONATION_HISTORY:
         USER_DONATION_HISTORY[full_name_input] = []
-        name_selected(full_name_input)
+        request_donation_output = 'input {}\'s donation amount:'.format(full_name_input)
     elif full_name_input in USER_DONATION_HISTORY:
-        name_selected(full_name_input)
-
-
-def name_selected(full_name_input):
-    """."""
-    global USER_DONATION_HISTORY
-    request_donation_output = 'input {}\'s donation amount:'.format(full_name_input)
+        request_donation_output = 'input {}\'s donation amount:'.format(full_name_input)
     donation_amount = int(get_user_input(request_donation_output, validate_donation))
-    USER_DONATION_HISTORY[full_name_input].append(donation_amount)
-    print('Thank you {} for your donation of {}!'.format(full_name_input, donation_amount))
+    print(name_selected(full_name_input, donation_amount))
     main()
 
 
+def name_selected(full_name_input, donation_amount):
+    """Request donation amount from the name selected."""
+    global USER_DONATION_HISTORY
+    USER_DONATION_HISTORY[full_name_input].append(donation_amount)
+    return 'Thank you {} for your donation of {}!'.format(full_name_input, donation_amount)
+
+
 def handle_report():
-    """."""
+    """Call create report and main function."""
     create_a_report()
     main()
 
 
 def create_a_report():
-    """."""
+    """Organize data into list of lists."""
     donors_donation_list = []
     for key in USER_DONATION_HISTORY:
         new_donor = []
@@ -77,35 +77,16 @@ def create_a_report():
         new_donor.append(sum(USER_DONATION_HISTORY[key]) / len(USER_DONATION_HISTORY[key]))
         donors_donation_list.append(new_donor)
     sorted_donor_list = sorted(donors_donation_list, reverse=True)
-    # print(create_donor_table(USER_DONATION_HISTORY, colList=None))  #this
-    # line needs to go elsewhere.
     print_report_table(sorted_donor_list)
 
 
 def print_report_table(sorted_donor_list):
-    """."""
+    """Print out data as a table."""
     print(tabulate(sorted_donor_list, headers=['Donation Total', 'Name', 'Num of Donations', 'Avg Donation Amount']))
 
 
-# def create_donor_table(USER_DONATION_HISTORY, colList=None):
-#     """Function puts our donor data in a table and prints it out."""
-#     # if not column_list:  # This line throws an error that I cant figure.
-#     column_list = list(USER_DONATION_HISTORY[0].keys()
-#                        if USER_DONATION_HISTORY
-#                        else []
-#                        )
-#     my_list = [column_list]  # 1st row = header
-#     for donor in USER_DONATION_HISTORY:
-#         my_list.append([str(donor[col] or '') for col in column_list])
-#     column_size = [max(map(len, col)) for col in zip(*my_list)]
-#     table_row = ' | '.join(["{{:<{}}}".format(i) for i in column_size])
-#     my_list.insert(1, ['-' * i for i in column_size])  # Seperating line
-#     for donor in my_list:
-#         print(table_row.format(*donor))
-
-
-def main():
-    """."""
+def main():  # pragma: no cover
+    """Grab initial user input and calls functions based on that.  Requires user input so pragma: no cover."""
     print('ctrl + c to quit')
     initial_user_input = get_user_input('input: \'thank you\' or \'report\'',
                                         validate_user_input_thank_report)
@@ -115,7 +96,7 @@ def main():
         handle_report()
 
 
-if __name__ == "__main__":
+if __name__ == "__main__":  # pragma: no cover
     try:
         main()
     except KeyboardInterrupt:
