@@ -1,0 +1,11 @@
+{
+  "test_mailroom.py::test_name_selected[jim-jim]": true, 
+  "test_mailroom.py::test_name_selected[n0-zach]": true, 
+  "test_mailroom.py::test_name_selected[n1-Thank you jim for your donation of 5!]": true, 
+  "test_mailroom.py::test_name_selected[n1-jim]": true, 
+  "test_mailroom.py::test_name_selected[zach-zach]": true, 
+  "test_mailroom.py::test_thankyou_or_report_validation[another random string-None]": true, 
+  "test_mailroom.py::test_thankyou_or_report_validation[anything-None]": true, 
+  "test_mailroom.py::test_thankyou_or_report_validation[report-report]": true, 
+  "test_mailroom.py::test_thankyou_or_report_validation[thank you-thank you]": true
+}
