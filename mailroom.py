@@ -38,6 +38,7 @@ def create_a_report():
         new_donor = []
         new_donor.append(sum(USER_DONATION_HISTORY[key]))
         new_donor.append(key)
+        new_donor.append(len(USER_DONATION_HISTORY[key]))
         donors_donation_list.append(new_donor)
     print(sorted(donors_donation_list, reverse=True))
     main()
