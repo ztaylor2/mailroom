@@ -1,6 +1,0 @@
-tabulate
-
-[test]
-pytest
-pytest-cov
-tox

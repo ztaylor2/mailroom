@@ -1,7 +1,0 @@
-setup.py
-trigram.egg-info/PKG-INFO
-trigram.egg-info/SOURCES.txt
-trigram.egg-info/dependency_links.txt
-trigram.egg-info/entry_points.txt
-trigram.egg-info/requires.txt
-trigram.egg-info/top_level.txt
