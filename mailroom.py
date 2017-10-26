@@ -9,7 +9,7 @@ USER_DONATION_HISTORY = {"zach": [1, 2, 3],
 
 
 def get_user_input(prompt, validator=None):  # pragma: no cover
-    """."""
+    """Handle asking for user input and validation."""
     reply = None
     while reply is None:
         reply = input(prompt)
@@ -22,13 +22,13 @@ def get_user_input(prompt, validator=None):  # pragma: no cover
 
 
 def validate_user_input_thank_report(reply):
-    """."""
+    """Validate user input."""
     if reply == 'thank you' or reply == 'report':
         return reply
 
 
 def validate_donation(reply):
-    """."""
+    """Validate donation input."""
     try:
         val = int(reply)
         return reply
@@ -38,7 +38,7 @@ def validate_donation(reply):
 
 def send_a_thank_you():  # pragma: no cover
     """Gather our user input hence the pragma: no cover."""
-    global USER_DONATION_HISTORY
+    USER_DONATION_HISTORY
     full_name_input = get_user_input('input full name:')
     if full_name_input == 'list':
         create_a_report()
@@ -55,7 +55,7 @@ def send_a_thank_you():  # pragma: no cover
 
 def name_selected(full_name_input, donation_amount):
     """Request donation amount from the name selected."""
-    global USER_DONATION_HISTORY
+    USER_DONATION_HISTORY
     USER_DONATION_HISTORY[full_name_input].append(donation_amount)
     return 'Thank you {} for your donation of {}!'.format(full_name_input, donation_amount)
 

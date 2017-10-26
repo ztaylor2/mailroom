@@ -2,18 +2,17 @@
 from setuptools import setup
 
 setup(
-    name="trigram",
-    description="A Python implementation of a trigram parser.",
+    name="mailroom",
+    description="A Python implementation of a mailroom donation tracking app.",
     version=0.1,
     author="Zach Taylor & Michael Shinners",
     author_email="zacharymtaylor3@gmail.com & michaelshinners@gmail.com",
     license='MIT',
-    py_modules=['trigram'],
+    py_modules=['mailroom'],
     install_requires=['tabulate'],
     extras_require={'test': ['pytest', 'pytest-cov', 'tox']},
     entry_points={
         'console_scripts': [
-            "mailroom = mailroom:main"
         ]
     }
 )
